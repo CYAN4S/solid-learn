@@ -9,7 +9,10 @@ import Counter from "./components/Counter";
 const App: Component = () => {
   return (
     <div>
+      {/* Components */}
       <Header />
+
+
       <Counter />
     </div>
   );
