@@ -5,16 +5,21 @@ import styles from "./App.module.css";
 
 import Header from "./components/Header";
 import Counter from "./components/Counter";
+import Namecard from "./components/Namecard";
+import Todos from "./components/Todos";
 
 const App: Component = () => {
   return (
-    <div>
+    <>
       {/* Components */}
       <Header />
 
+      {/* Components passing props */}
+      <Namecard name="Cyan" />
 
       <Counter />
-    </div>
+      <Todos />
+    </>
   );
 };
 

@@ -6,6 +6,7 @@ export default () => {
   const [count, setCount] = createSignal(0);
 
   // Effects
+  // Automatic effect dependency tracking
   createEffect(() => {
     console.log("The count is now", count());
   });
