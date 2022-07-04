@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Counter from "./components/Counter";
 import Namecard from "./components/Namecard";
 import Todos from "./components/Todos";
+import Auth from "./components/Auth";
 
 const App: Component = () => {
   return (
@@ -19,6 +20,7 @@ const App: Component = () => {
 
       <Counter />
       <Todos />
+      <Auth isLoggedIn={false} username={"Cyan"}/>
     </>
   );
 };
