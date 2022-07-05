@@ -8,6 +8,7 @@ import Counter from "./components/Counter";
 import Namecard from "./components/Namecard";
 import Todos from "./components/Todos";
 import Auth from "./components/Auth";
+import Fetch from "./components/Fetch";
 
 const App: Component = () => {
   return (
@@ -20,7 +21,8 @@ const App: Component = () => {
 
       <Counter />
       <Todos />
-      <Auth isLoggedIn={false} username={"Cyan"}/>
+      <Auth isLoggedIn={true} username={"C"}/>
+      <Fetch />
     </>
   );
 };

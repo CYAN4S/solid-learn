@@ -1,6 +1,6 @@
 // Looping over items
 
-import { createSignal, For, JSX, Setter } from "solid-js";
+import { createSignal, For, Index, JSX, Setter } from "solid-js";
 
 type EventHandler = JSX.EventHandlerUnion<
   HTMLFormElement,
@@ -28,8 +28,8 @@ const Editor = (props: IEditorProps) => {
 
   const onSubmit: EventHandler = (e) => {
     e.preventDefault();
-    props.setToDoList(v => [...v, newToDo()])
-    setNewToDo("")
+    props.setToDoList((v) => [...v, newToDo()]);
+    setNewToDo("");
   };
 
   return (
@@ -45,7 +45,6 @@ const Editor = (props: IEditorProps) => {
   );
 };
 
-
 // Todos
 export default () => {
   const [toDoList, setToDoList] = createSignal(initial);
@@ -59,7 +58,25 @@ export default () => {
 
       {/* Loop */}
       <ul>
-        <For each={toDoList()}>{(content) => <Li content={content} />}</For>
+        <For each={toDoList()}>
+          {(content, i) => (
+            <>
+              <b>INDEX {i() + 1}</b>
+              <Li content={content} />
+            </>
+          )}
+        </For>
+      </ul>
+
+      <ul>
+        <Index each={toDoList()}>
+          {(content, i) => (
+            <>
+              <b>INDEX {i + 1}</b>
+              <Li content={content()} />
+            </>
+          )}
+        </Index>
       </ul>
 
       <Editor setToDoList={setToDoList} />
