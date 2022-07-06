@@ -10,7 +10,7 @@ interface IAuthProps {
 
 export default (props: IAuthProps) => {
   const fallback = <p>Plz login</p>;
-  const switchDefault = <p>Not Logged in</p>
+  const switchDefault = <p>Not Logged in</p>;
 
   return (
     <>

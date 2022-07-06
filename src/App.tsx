@@ -9,6 +9,7 @@ import Namecard from "./components/Namecard";
 import Todos from "./components/Todos";
 import Auth from "./components/Auth";
 import Fetch from "./components/Fetch";
+import Lifecycle from "./components/Lifecycle";
 
 const App: Component = () => {
   return (
@@ -21,8 +22,10 @@ const App: Component = () => {
 
       <Counter />
       <Todos />
-      <Auth isLoggedIn={true} username={"C"}/>
+      <Auth isLoggedIn={true} username={"C"} />
       <Fetch />
+
+      <Lifecycle />
     </>
   );
 };
